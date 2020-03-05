@@ -4,4 +4,5 @@ RUN apt-get update -y
 RUN apt-get install openjdk-7-jre -y
 RUN apt-get install tomcat7
 
+EXPOSE 8080
 CMD java -v
