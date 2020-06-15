@@ -67,6 +67,11 @@ pipeline {
 			}
 		}
     }
+	post {
+		always {
+			mail to: prabhav@pratian.com, subject: 'The Pipeline failed :('
+		}
+	}
 }
 
 def notify(status){
