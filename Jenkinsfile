@@ -12,6 +12,12 @@ pipeline {
 				jdk 'jdk8'
 				maven 'apache-maven-3.6.1'
 			}
+						when {
+				expression { params.Notification_Type == Detailed }
+			}
+			steps{
+				notify('Initiating Build Stage')
+			}
 			steps{
 				echo "Building"
 				powershell 'java -version'
