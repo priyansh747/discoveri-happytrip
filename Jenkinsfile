@@ -9,7 +9,7 @@ pipeline {
         stage ('Build'){
 			agent any
 			when {
-				expression { params.Deploy == true }
+				expression { params.Notification_Type == Detailed }
 			}
 			steps{
 				notify('Initiating Build Stage')
