@@ -22,7 +22,7 @@ pipeline {
             agent any
 			tools {
 				jdk 'jdk8'
-				maven 'maven-3.6.1'
+				maven 'apache-maven-3.6.1'
 			}
 			when {
                 expression { params.Execute_Sonar == true }
@@ -63,7 +63,7 @@ pipeline {
             }
 			steps{
 			echo "Deploying"
-			deploy adapters: [tomcat7(credentialsId: 'cc6538f6-9343-4acc-b3fd-1309b39ce983', path: '', url: 'http://172.31.11.5:8085')], 				contextPath: '/happytrip', war: '**/*.war'
+			deploy adapters: [tomcat7(credentialsId: 'cc6538f6-9343-4acc-b3fd-1309b39ce983', path: '', url: 'http://172.31.11.5:8085')], contextPath: '/happytrip', war: '**/*.war'
 			}
 		}
     }
