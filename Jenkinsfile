@@ -3,6 +3,7 @@ pipeline {
 	parameters { 
 	booleanParam(name: 'Execute_Sonar', defaultValue: false, description: '')
 	booleanParam(name: 'Deploy', defaultValue: true, description: '')
+	choice choices: ['Regular', 'Detailed'], description: '', name: 'Notification_Type'
 	}
     stages{
         stage ('Build'){
