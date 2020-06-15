@@ -9,7 +9,7 @@ pipeline {
 			agent any
 			tools {
 				jdk 'jdk8'
-				maven 'maven-3.6.1'
+				maven 'apache-maven-3.6.1'
 			}
 			steps{
 				echo "Building"
