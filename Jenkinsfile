@@ -13,10 +13,11 @@ pipeline {
 				maven 'apache-maven-3.6.1'
 			}
 			steps{
-				echo "Building"
+				notify('Initiating Build Stage')
 				powershell 'java -version'
 				powershell 'mvn -version'
 				powershell 'mvn clean package'
+				notify('Completed Build Stage')
 			}
 		}
         stage ('Sonar') {
@@ -29,16 +30,19 @@ pipeline {
                 expression { params.Execute_Sonar == true }
             }
             steps {
-                echo "Executing Sonar"
+                notify('Initiating Sonar Stage')
 				withSonarQubeEnv('sonar6.2') {
 					powershell 'mvn sonar:sonar'
 				}
+		notify('Completed Sonar Stage')
             }
         }
 		stage('Archive') {
 			agent any
 			steps {
+				notify('Initiating Archive Stage')
 				archiveArtifacts artifacts: '**/*.war'
+				notify('Completed Archive Stage')
 			}	
 		}		
 		stage ('Approval'){
@@ -63,8 +67,9 @@ pipeline {
                 expression { params.Deploy == true }
             }
 			steps{
-			echo "Deploying"
+			notify('Initiating Deploy Stage')
 			deploy adapters: [tomcat7(credentialsId: 'cc6538f6-9343-4acc-b3fd-1309b39ce983', path: '', url: 'http://localhost:8085')], contextPath: '/happytrip', war: '**/*.war'
+			notify('Completed Deploy Stage')
 			}
 		}
     }
