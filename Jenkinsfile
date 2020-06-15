@@ -68,8 +68,11 @@ pipeline {
 		}
     }
 	post {
-		always {
-			mail to: prabhav@pratian.com, subject: 'The Pipeline failed :('
+		success {
+			mail to: prabhav@pratian.com, subject: 'The Buidl Successful :)'
+		}
+		failure {
+			mail to: prabhav@pratian.com, subject: 'The Build failed :('
 		}
 	}
 }
