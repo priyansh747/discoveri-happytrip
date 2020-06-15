@@ -13,12 +13,6 @@ pipeline {
 				maven 'apache-maven-3.6.1'
 			}
 			steps{
-				when {
-					expression { params.Notification_Type == Detailed }
-				}
-				steps{
-					notify('Initiating Build Stage')
-				}
 				echo "Building"
 				powershell 'java -version'
 				powershell 'mvn -version'
