@@ -8,12 +8,6 @@ pipeline {
     stages{
         stage ('Build'){
 			agent any
-			when {
-				expression { params.Notification_Type == Detailed }
-			}
-			steps{
-				notify('Initiating Build Stage')
-			}
 			tools {
 				jdk 'jdk8'
 				maven 'apache-maven-3.6.1'
