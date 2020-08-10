@@ -26,11 +26,11 @@
 			<releases>
 				<enabled>true</enabled>
 			</releases>
-		</repository>
+		</repository>-->
 		<repository>
 			<id>spring.test-mvc</id>
-			<url>http://repo.springsource.org/libs-milestone</url>
-		</repository>-->
+			<url>https://repo.springsource.org/libs-milestone</url>
+		</repository>
 	</repositories>
 	<build>
 		<plugins>
