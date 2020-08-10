@@ -16,17 +16,17 @@
 		<jpa.version>2.0-cr-1</jpa.version>
 	</properties>
 	<repositories>
-		<!--<repository>
+		<repository>
 			<id>codehaus</id>
-			<url>http://repository.codehaus.org/org/codehaus</url>
-			<url>https://repository.mulesoft.org/nexus/content/groups/public/</url>
+			<!--<url>http://repository.codehaus.org/org/codehaus</url>-->
+			<url>http://repository.mulesoft.org/nexus/content/groups/public/</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
-		</repository>-->
+		</repository>
 		<repository>
 			<id>spring.test-mvc</id>
 			<url>http://repo.springsource.org/libs-milestone</url>
