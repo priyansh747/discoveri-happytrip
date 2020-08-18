@@ -6,7 +6,7 @@ pipeline{
   stages{
     stage('Build'){
       steps{
-             powershell label: '', script: '''mvn clean package'''  
+             powershell label: '', script: '''mvn package -f happy-pipe\\pom.xml'''  
       }
     }
   }
