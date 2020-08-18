@@ -1,4 +1,5 @@
 pipeline{
+  agent any
   triggers {
   pollSCM '* * * * *'
   }
@@ -8,4 +9,5 @@ pipeline{
              powershell label: '', script: '''mvn clean package'''  
       }
     }
-  }}
+  }
+}
