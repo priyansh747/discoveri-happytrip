@@ -50,7 +50,9 @@ pipeline{
     post {
         always {
                 archiveArtifacts artifacts: '**/*.war', followSymlinks: false
-              mail bcc: '', body: 'JENKINS NOTIFICATION', cc: '', from: 'no-reply@jenkins.com', replyTo: '', subject: 'BUILD COMPLETE', to: 'priyanshagarwal1998@gmail.com'
+              emailext body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+Check console output at $BUILD_URL to view the results.''', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'priyansh.agarwal@amadeus.com'
                 
         }
     }
