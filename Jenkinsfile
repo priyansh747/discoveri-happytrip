@@ -50,9 +50,9 @@ pipeline{
     post {
         always {
                 archiveArtifacts artifacts: '**/*.war', followSymlinks: false
-          mail bcc: '', body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+          mail bcc: '', body: '''${env.PROJECT_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}:
 
-Check console output at $BUILD_URL to view the results.''', cc: '', from: '', replyTo: '', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'priyansh.agarwal@amadeus.com'              
+Check console output at ${env.BUILD_URL} to view the results.''', cc: '', from: '', replyTo: '', subject: '${env.PROJECT_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}!', to: 'priyansh.agarwal@amadeus.com'              
         }
     }
 }
