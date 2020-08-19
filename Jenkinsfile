@@ -50,6 +50,7 @@ pipeline{
     post {
         always {
                 archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+              mail bcc: '', body: 'JENKINS NOTIFICATION', cc: '', from: 'no-reply@jenkins.com', replyTo: '', subject: 'BUILD COMPLETE', to: 'priyanshagarwal1998@gmail.com'
                 
         }
     }
