@@ -11,7 +11,7 @@ pipeline{
             steps {
                 echo "Build Project"
                 withSonarQubeEnv('sonar') {
-                    powershell label: '', script: 'mvn package -f C:/Program Files (x86)/Jenkins/workspace/happy-pipe/pom.xml sonar:sonar'
+                    powershell label: '', script: 'mvn package  sonar:sonar'
                 }
                 
             }
